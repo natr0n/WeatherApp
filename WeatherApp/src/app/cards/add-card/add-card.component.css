@@ -1,0 +1,31 @@
+.cards {
+    display: flex;
+    flex-direction: row;
+}
+
+.cards div {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+    justify-items: center;
+    padding: .5rem;
+    margin: 2rem;
+    width: 25rem;
+    height: 30rem;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 1.75rem;
+    animation: 1.25s ease-in-out 0ms 1 fadein;
+}
+
+
+
+.weatherImageSize {
+    padding-top: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50% !important;
+}
+
