@@ -46,3 +46,17 @@ p{
 .weatherType {
     font-size: 30px;
 }
+
+.city-name {
+    font-size: 20px;
+}
+
+.down-Arrow {
+    width: 10%;
+    float: left;
+}
+
+.up-Arrow {
+    width: 10%;
+    float: right;
+}
