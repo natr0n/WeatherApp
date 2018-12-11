@@ -1,0 +1,6 @@
+.navStyle {
+    box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+    background-color: white !important;
+    height: 4rem;
+    align-items: center;
+}
