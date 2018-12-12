@@ -17,6 +17,71 @@
               required
               #name>
           </div>
+
+          <div class="col-sm-12 form-group" style="display:flex; flex-direction: column;">
+              <label for="weatherType">Weather Type</label>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-secondary active">
+                <input 
+                type="radio"
+                id="weatherSun"
+                class="form-control"
+                size="120"
+                max="255"
+                name="weatherSun"
+                #weatherSun
+                 autocomplete="off"
+                checked> Sun
+              </label>
+              <label class="btn btn-secondary">
+                <input 
+                type="radio"
+              id="weatherRain"
+              class="form-control"
+              size="120"
+              max="255"
+              name="weatherRain"
+              #weatherRain
+              autocomplete="off"> Rain
+              </label>
+              <label class="btn btn-secondary">
+                <input 
+                type="radio"
+              id="weatherSnow"
+              class="form-control"
+              size="120"
+              max="255"
+              name="weatherSnow"
+              #weatherSnow
+               autocomplete="off"> Snow
+              </label>
+              <label class="btn btn-secondary">
+                  <input 
+                  type="radio"
+                id="weatherStorm"
+                class="form-control"
+                size="120"
+                max="255"
+                name="weatherStorm"
+                #weatherStrom
+                 autocomplete="off"> Storm
+                </label>
+            </div>
+          </div>
+
+          <!-- 
+            
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="weatherType" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="weatherType">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+           <input
+              > -->
+          <!-- </div> --> 
   
           <div class="col-sm-12 form-group">
             <label for="description">Tempurature</label>
@@ -31,18 +96,31 @@
           </div>
   
           <div class="col-sm-12 form-group">
-            <label for="documentUrl">Description</label>
+            <label for="min">Min</label>
             <input
               type="text"
-              id="documentUrl"
+              id="min"
               class="form-control"
               size="150"
               max="255"
-              name="documentUrl"
+              name="min"
               required
-              #documentUrl>
+              #min>
           </div>
 
+          <div class="col-sm-12 form-group">
+              <label for="max">Max</label>
+              <input
+                type="text"
+                id="max"
+                class="form-control"
+                size="150"
+                max="255"
+                name="max"
+                required
+                #max>
+            </div>
+  
 
         </div>
   
