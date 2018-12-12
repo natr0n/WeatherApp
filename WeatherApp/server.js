@@ -19,15 +19,15 @@ var index = require('./server/routes/app');
 // *** Important *** change yourPort and yourDatabase
 //     to those used by your database
 mongoose.connect('mongodb+srv://dar15003:codebabies1234$@weather-hx8jb.mongodb.net/test?retryWrites=true',
-  { useNewUrlParser: true }, (err, res) => {
-    if (err) {
-      console.log('Connection failed');
-    }
-    else {
-      console.log('Connected to database!');
-    }
-  }
-);
+  { useNewUrlParser: true })
+   .then(() => {
+    console.log('Connected to database!');
+})
+.catch((error) => {
+    console.log('Connection Failed')
+    console.log(error)
+});
+
 
 var app = express(); // create an instance of express
 
