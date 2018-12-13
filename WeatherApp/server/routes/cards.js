@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-// var sequenceGenerator = require('./sequenceGenerator');
 
 const Card = require('../models/card');
 
@@ -26,8 +25,6 @@ Card.find()
 );
 
 router.post('/', (req, res, next) => {
-//   const maxDocumentId = sequenceGenerator.nextId("documents");
-//   console.log(maxDocumentId);
   const card = new Card({
     id: req.body.id,
     city: req.body.city,
