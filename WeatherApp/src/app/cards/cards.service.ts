@@ -63,7 +63,7 @@ export class CardsService {
 
   }
 
-  addContact(newCard: Cards) {
+  addCard(newCard: Cards) {
     if(!newCard){
       return;
     }
