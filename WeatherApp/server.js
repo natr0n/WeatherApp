@@ -18,7 +18,7 @@ const cardRoutes = require('./server/routes/cards');
 // establish a connection to the mongo database
 // *** Important *** change yourPort and yourDatabase
 //     to those used by your database
-mongoose.connect('mongodb+srv://dar15003:codebabies1234$@weather-hx8jb.mongodb.net/test?retryWrites=true',
+mongoose.connect('mongodb+srv://dar15003:codebabies1234$@weather-hx8jb.mongodb.net/weather?retryWrites=true',
   { useNewUrlParser: true })
    .then(() => {
     console.log('Connected to database!');
