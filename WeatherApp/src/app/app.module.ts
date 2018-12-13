@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { WeatherCardComponent } from './cards/weather-card/weather-card.component';
 import { AddCardComponent } from './cards/add-card/add-card.component';
 import { DetailsComponent } from './cards/details/details.component';
-import { AddFormComponent } from './cards/add-card/add-form/add-form.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +14,7 @@ import { AddFormComponent } from './cards/add-card/add-form/add-form.component';
     HomeComponent,
     WeatherCardComponent,
     AddCardComponent,
-    DetailsComponent,
-    AddFormComponent
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
