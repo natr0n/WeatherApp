@@ -4,7 +4,9 @@ import { Subject } from 'rxjs';
 import {HttpClient, HttpHeaders, HttpResponse, HttpRequest} from "@angular/common/http";
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CardsService {
   cardsListChangedEvent = new Subject<Cards[]>();
   maxContactId: number;
@@ -12,8 +14,8 @@ export class CardsService {
 
   
   constructor(private http: HttpClient,) { 
-    this.maxContactId = this.getMaxId();  }
-
+    // this.maxContactId = this.getMaxId();  }
+  }
 
 
     storeCards(cards: Cards[]) {
@@ -37,14 +39,15 @@ export class CardsService {
           (cardsData) => {
             this.cards = cardsData.cards;
             console.log(this.cards);
-            this.maxContactId = this.getMaxId();
+            this.cardsListChangedEvent.next(this.cards.slice());
+            //this.maxContactId = this.getMaxId();
             // this.getCards.next(this.cards.slice())
           });
       //error function
       (error: any) => {
         console.log(error);
       }
-      return this.cards.slice();
+      // return this.cards.slice();
     }
 
   getCard(id: string){

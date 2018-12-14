@@ -9,18 +9,18 @@ import { CardsService } from '../cards.service';
   styleUrls: ['./card-list.component.css']
 })
 export class CardListComponent implements OnInit, OnDestroy {
-  card: Cards[] = [];
+  cards: Cards[] = [];
   private subscription: Subscription;
 
   constructor(private cardService: CardsService) {
-    this.card = this.cardService.getCards();
+    this.cardService.getCards();
    }
 
   ngOnInit() {
     this.subscription = this.cardService.cardsListChangedEvent
       .subscribe(
         (cardsList: Cards[]) => {
-          this.card = cardsList;
+          this.cards = cardsList;
         }
       )
     
