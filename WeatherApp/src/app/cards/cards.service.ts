@@ -31,11 +31,11 @@ export class CardsService {
 
 
     getCards() {
-      this.http.get<{message: String, contacts: Cards[]}>('http://localhost:3000/cards')
+      this.http.get<{message: String, cards: Cards[]}>('http://localhost:3000/cards')
         .subscribe(
           //success function
           (cardsData) => {
-            this.cards = cardsData.contacts;
+            this.cards = cardsData.cards;
             console.log(this.cards);
             this.maxContactId = this.getMaxId();
             // this.getCards.next(this.cards.slice())

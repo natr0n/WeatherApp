@@ -23,8 +23,7 @@ export class CardListComponent implements OnInit, OnDestroy {
           this.card = cardsList;
         }
       )
-      console.log(Cards);
-      
+    
   }
 
   ngOnDestroy(){

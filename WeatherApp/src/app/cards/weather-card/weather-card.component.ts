@@ -9,8 +9,9 @@ import { Cards } from '../cards.model';
 export class WeatherCardComponent implements OnInit {
   @Input() card: Cards;
 
-  constructor() { }
-
+  constructor() {
+    console.log(this.card);
+   }
   ngOnInit() {
   }
 
