@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Cards } from '../cards.model';
 import { CardsService } from '../cards.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { Cards } from '../cards.model';
 
 @Component({
-  selector: 'app-add-card',
-  templateUrl: './add-card.component.html',
-  styleUrls: ['./add-card.component.css']
+  selector: 'app-card-edit',
+  templateUrl: './card-edit.component.html',
+  styleUrls: ['./card-edit.component.css']
 })
-export class AddCardComponent implements OnInit {
+export class CardEditComponent implements OnInit {
   originalCard: Cards;
   card: Cards;
   editMode: boolean = false;
@@ -54,5 +54,6 @@ export class AddCardComponent implements OnInit {
   onCancel() {
     this.router.navigate(['/cards']);
   }
+
 
 }
