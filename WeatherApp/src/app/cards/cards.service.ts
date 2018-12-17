@@ -51,7 +51,7 @@ export class CardsService {
     }
 
   getCard(id: string){
-    return this.http.get<{message: String, contact: Cards}>('http://localhost:3000/cards/' + id);
+    return this.http.get<{message: String, card: Cards}>('http://localhost:3000/cards/' + id);
   }
 
   deleteCard(card: Cards) {
@@ -87,10 +87,20 @@ export class CardsService {
   }
 
   updateCards(originalCard: Cards, newCard: Cards) {
+      // TEMP:
+      console.log('in updateCards');
+      console.log(originalCard);
+      console.log(newCard);
+      
+      
     if (!originalCard || !newCard ){
       return;
     }
+    console.log(this.cards);
+    
     const pos = this.cards.indexOf(originalCard);
+    console.log(pos);
+    
     if (pos < 0) {
       return;
     }
@@ -99,15 +109,15 @@ export class CardsService {
       'Content-Type': 'application/json'
     });
 
-    const strContact= JSON.stringify(newCard);
+    // const strContact= JSON.stringify(newCard);
 
-    this.http.patch('http://localhost:3000/cards' + originalCard.id
-      , strContact
+    this.http.put('http://localhost:3000/cards/' + originalCard.id
+      , newCard
       , { headers: headers })
       .subscribe(
-        (cards: Cards[]) => {
-          this.cards = cards;
-          this.cardsListChangedEvent.next(this.cards.slice());
+        (response: Response) => {
+          this.cards[pos] = newCard;
+        //   this.cardsListChangedEvent.next(this.cards.slice());
         });
   }
 

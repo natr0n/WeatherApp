@@ -1,2 +1,5 @@
+<div class="pull-right pad-left-right">
+    <a class="btn btn-success" [routerLink]="['new']">New City</a>
+  </div>
+<app-card-item *ngFor="let card of cards" [card]="card"></app-card-item>
 
-<app-weather-card *ngFor="let card of cards" [card]="card"></app-weather-card>
