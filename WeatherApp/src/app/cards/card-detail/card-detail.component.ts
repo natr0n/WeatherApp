@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Cards } from '../cards.model';
 import { CardsService } from '../cards.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
@@ -17,8 +17,6 @@ export class CardDetailComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    console.log(this.card);
-    
     this.route.params
     .subscribe(
       (params: Params) => {
@@ -26,7 +24,8 @@ export class CardDetailComponent implements OnInit {
         this.cardsService.getCard(this.id)
           .subscribe(
             (responseData) => {
-              this.card = responseData.contact;
+              this.card = responseData.card;
+              console.log(this.card);
             }
           );
       }

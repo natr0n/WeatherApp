@@ -24,24 +24,31 @@ export class CardEditComponent implements OnInit {
         (params: Params) => {
           const id = params.id;
           if (id == undefined || id == null) {
+            this.editMode = false;
             return;
           }
-          this.cardsService.getCard(id);
-          if (this.originalCard == undefined || this.originalCard == null) {
-            return;
-          }
-          this.editMode = true;
-          this.card = JSON.parse(JSON.stringify(this.originalCard));
+          this.cardsService.getCard(id)
+            .subscribe(
+              (responseData) => {
+                this.originalCard = responseData.card;
+                if (this.originalCard == undefined || this.originalCard == null) {
+                  return;
+                }
+                this.editMode = true;
+                this.card = JSON.parse(JSON.stringify(this.originalCard));
+                console.log(this.card);
+              }
+            )
         }
       )
   }
 
   onSubmit(form: NgForm){
-    let newId = this.cardsService.getMaxId();
-    newId = newId++;
+    // let newId = this.cardsService.getMaxId();
+    // newId = newId++;
     let values = form.value;
     // documentUrl to match name
-    let newCards = new Cards(values['city'], newId.toString(), values['image'], values['max'], values['min'], values['temp']);
+    const newCards = new Cards(values['id'], values['city'], values['image'], values['temp'], values['min'], values['max']);
     if (this.editMode) {
       this.cardsService.updateCards(this.originalCard, newCards);
     } else {

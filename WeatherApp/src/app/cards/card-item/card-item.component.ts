@@ -10,10 +10,10 @@ export class CardItemComponent implements OnInit {
   @Input() card: Cards;
 
   constructor() { 
-    console.log(this.card);
   }
 
   ngOnInit() {
+    console.log(this.card);
   }
 
 }

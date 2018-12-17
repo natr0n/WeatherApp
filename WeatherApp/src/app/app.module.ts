@@ -8,6 +8,10 @@ import { WeatherCardComponent } from './cards/weather-card/weather-card.componen
 import { AddCardComponent } from './cards/add-card/add-card.component';
 import { CardListComponent } from './cards/card-list/card-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CardEditComponent } from './cards/card-edit/card-edit.component';
+import { CardItemComponent } from './cards/card-item/card-item.component';
+import { CardDetailComponent } from './cards/card-detail/card-detail.component';
 
 
 @NgModule({
@@ -16,12 +20,17 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     WeatherCardComponent,
     AddCardComponent,
-    CardListComponent
+    CardListComponent,
+    CardEditComponent,
+    CardItemComponent,
+    CardDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule, 
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

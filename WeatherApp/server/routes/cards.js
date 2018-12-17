@@ -24,6 +24,21 @@ Card.find()
   }
 );
 
+router.get('/:id',
+(req, res, next) => {
+Card.findOne({"id" : req.params.id})
+    .then(card => {
+        res.status(200).json ({
+            message: 'cards fetched successfully!',
+            card: card
+        });
+    })
+    .catch(error => {
+    returnError(res, error);
+  });
+}
+);
+
 router.post('/', (req, res, next) => {
   const card = new Card({
     id: req.body.id,
