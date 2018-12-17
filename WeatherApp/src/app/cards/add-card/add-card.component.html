@@ -1,6 +1,6 @@
 
 <div class="container cards">
-  <div class="card card-space" style="width: 18rem;" data-toggle="modal" data-target="#exampleModalCenter">
+  <div class="card card-space" style="width: 18rem;" data-toggle="modal" data-target="#exampleModalCenter" [routerLink]="['new']" routerLinkActive="router-link-active">
     <!-- <div> -->
     <svg class="add__icon weatherImageSize" id="Plus_Icon" data-name="Plus Icon" viewBox="1454.4 326.4 209.1 209.1">
       <defs>
@@ -40,7 +40,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
         
-            <form>
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
               <div class="row">
         
                 <div class="col-sm-12 form-group">
@@ -53,6 +53,8 @@
                     max="120"
                     name="name"
                     required
+                    ngModel
+                    [ngModel]="card?.city"
                     #name>
                 </div>
       
@@ -67,8 +69,10 @@
                       size="120"
                       max="255"
                       name="weatherSun"
-                      #weatherSun
+                      #weatherSun = ngModel
                        autocomplete="off"
+                       ngModel
+                      [ngModel]="card?.image"
                       checked> Sun
                     </label>
                     <label class="btn btn-secondary">
@@ -79,18 +83,22 @@
                     size="120"
                     max="255"
                     name="weatherRain"
-                    #weatherRain
+                    #weatherRain = ngModel
+                    ngModel
+                    [ngModel]="card?.image"
                     autocomplete="off"> Rain
                     </label>
                     <label class="btn btn-secondary">
                       <input 
                       type="radio"
-                    id="weatherSnow"
-                    class="form-control"
-                    size="120"
-                    max="255"
-                    name="weatherSnow"
-                    #weatherSnow
+                      id="weatherSnow"
+                      class="form-control"
+                      size="120"
+                      max="255"
+                      name="weatherSnow"
+                      ngModel
+                      [ngModel]="card?.image"
+                      #weatherSnow = ngModel
                      autocomplete="off"> Snow
                     </label>
                     <label class="btn btn-secondary">
@@ -101,7 +109,9 @@
                       size="120"
                       max="255"
                       name="weatherStorm"
-                      #weatherStrom
+                      ngModel
+                      [ngModel]="card?.image"
+                      #weatherStrom = ngModel
                        autocomplete="off"> Storm
                       </label>
                   </div>
@@ -116,7 +126,9 @@
                     size="120"
                     max="255"
                     name="description"
-                    #description>
+                    ngModel
+                    [ngModel]="card?.temp"
+                    #description = ngModel>
                 </div>
         
                 <div class="col-sm-12 form-group">
@@ -129,7 +141,9 @@
                     max="255"
                     name="min"
                     required
-                    #min>
+                    ngModel
+                    [ngModel]="card?.min"
+                    #min = ngModel>
                 </div>
       
                 <div class="col-sm-12 form-group">
@@ -141,16 +155,14 @@
                       size="150"
                       max="255"
                       name="max"
+                      ngModel
+                      [ngModel]="card?.max"
                       required
-                      #max>
+                      #max = ngModel>
                   </div>
         
       
               </div>
-        
-              <!-- <div *ngIf="!f.valid" class="alert alert-danger">
-                The Document title and URL are required fields
-              </div> -->
         
             </form>
         

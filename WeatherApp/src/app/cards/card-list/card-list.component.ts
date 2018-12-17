@@ -13,7 +13,7 @@ export class CardListComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
 
   constructor(private cardService: CardsService) {
-    this.cardService.getCards();
+   
    }
 
   ngOnInit() {
@@ -23,7 +23,7 @@ export class CardListComponent implements OnInit, OnDestroy {
           this.cards = cardsList;
         }
       )
-    
+      this.cardService.getCards();
   }
 
   ngOnDestroy(){
