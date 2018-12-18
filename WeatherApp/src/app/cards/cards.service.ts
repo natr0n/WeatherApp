@@ -98,7 +98,7 @@ export class CardsService {
     }
     console.log(this.cards);
     
-    const pos = this.cards.indexOf(originalCard);
+    const pos = this.cards.findIndex(x => x.id === originalCard.id);
     console.log(pos);
     
     if (pos < 0) {
